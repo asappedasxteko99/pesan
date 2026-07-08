@@ -1,44 +1,44 @@
 const menuData = [
-{ id: 1 ,name: " Nasi Ayam Kipas ", category: "makanan", desc:" Nasi Ayam Kipas ", price: 16000 , rating: 4.9, reviews:598, popular:true, img: " gambar/Ayam%20Kipas.png ." },
-{ id: 2 ,name: " Nasi Ayam Serundeng ", category: "makanan", desc:" Nasi Ayam Serundeng ", price: 15000 , rating: 4.2, reviews:378, popular:false, img: " gambar/Ayam%20Serundeng.png ." },
-{ id: 3 ,name: " Nasi Cumi Calamari ", category: "makanan", desc:" Nasi Cumi Calamari ", price: 15000 , rating: 4.3, reviews:316, popular:true, img: " gambar/Cumi%20Calamari%201.png ." },
-{ id: 4 ,name: " Nasi Udang Selimut ", category: "makanan", desc:" Nasi Udang Selimut ", price: 15000 , rating: 4.6, reviews:321, popular:true, img: " gambar/Udang%20Selimut.png ." },
-{ id: 5 ,name: " Nasi Chicken Katsu Barbeque ", category: "makanan", desc:" Nasi Chicken Katsu Barbeque ", price: 15000 , rating: 4.8, reviews:299, popular:true, img: " gambar/Chicken%20Katsu%20Saus%20Barbeque.png ." },
-{ id: 6 ,name: " Nasi Chicken Katsu Lada Hitam ", category: "makanan", desc:" Nasi Chicken Katsu Lada Hitam ", price: 15000 , rating: 4.4, reviews:224, popular:true, img: " gambar/Chicken%20Katsu%20%20Lada%20Hitam.png ." },
-{ id: 7 ,name: " Nasi Sayap Spacy ", category: "makanan", desc:" Nasi Sayap Spacy ", price: 15000 , rating: 4.7, reviews:278, popular:false, img: " gambar/Sayap%20Spicy.png ." },
-{ id: 8 ,name: " Nasi Telur Dadar ", category: "makanan", desc:" Nasi Telur Dadar ", price: 11000 , rating: 4.2, reviews:198, popular:false, img: " gambar/Telur%20Dadar.png ." },
-{ id: 9 ,name: " Nasi Usus ", category: "makanan", desc:" Nasi Usus ", price: 13000 , rating: 4.6, reviews:198, popular:false, img: " gambar/Usus.png ." },
-{ id: 10 ,name: " Nasi Putih ", category: "makanan", desc:" Nasi Putih ", price: 5000 , rating: 4.1, reviews:69, popular:false, img: " gambar/Nasi%20Putih.png ." },
-{ id: 11 ,name: " Ceker Pedas ", category: "makanan", desc:" Ceker Pedas ", price: 10000 , rating: 4.9, reviews:564, popular:true, img: " gambar/Ceker%20Pedas.png ." },
-{ id: 12 ,name: " Ceker Pedas Manis ", category: "makanan", desc:" Ceker Pedas Manis ", price: 10000 , rating: 4.6, reviews:447, popular:false, img: " gambar/Ceker%20Pedas%20Manis.png ." },
-{ id: 13 ,name: " Sayap Pedas ", category: "makanan", desc:" Sayap Pedas ", price: 10000 , rating: 4.8, reviews:434, popular:true, img: " gambar/Sayap%20Pedas-1.png ." },
-{ id: 14 ,name: " Sayap Pedas Manis ", category: "makanan", desc:" Sayap Pedas Manis ", price: 10000 , rating: 4.5, reviews:372, popular:false, img: " gambar/Sayap%20Pedas%20Manis.png ." },
-{ id: 15 ,name: " Pempek ", category:"jajan", desc:" Pempek ", price: 13000 , rating: 4.2, reviews:102, popular:false, img: " gambar/Pempek.png ." },
-{ id: 16 ,name: " Kentang Goreng ", category:"jajan", desc:" Kentang Goreng ", price: 10000 , rating: 4.3, reviews:76, popular:false, img: " gambar/Kentang%20Goreng.png ." },
-{ id: 17 ,name: " Keju Aroma ", category:"jajan", desc:" Keju Aroma ", price: 15000 , rating: 4.4, reviews:104, popular:false, img: " gambar/keju%20aroma.png ." },
-{ id: 18 ,name: " Dimsum ", category:"jajan", desc:" Dimsum ", price: 10000 , rating: 4.7, reviews:207, popular:true, img: " gambar/dimsum.png ." },
-{ id: 19 ,name: " Tahu Dimsum ", category:"jajan", desc:" Tahu Dimsum ", price: 12000 , rating: 4.3, reviews:87, popular:true, img: " gambar/Tahu%20dimsum.png ." },
-{ id: 20 ,name: " Salad Buah ", category:"jajan", desc:" Salad Buah ", price: 15000 , rating: 4.4, reviews:213, popular:true, img: " gambar/salad%20Buah.png ." },
+{ id: 1 ,name: " Nasi Ayam Kipas ", category: "makanan", desc:" Nasi Ayam Kipas ", price: 16000 , rating: 4.9, reviews:598, popular:true, img: " gambar/Ayam%20Kipas.png" },
+{ id: 2 ,name: " Nasi Ayam Serundeng ", category: "makanan", desc:" Nasi Ayam Serundeng ", price: 15000 , rating: 4.2, reviews:378, popular:false, img: " gambar/Ayam%20Serundeng.png" },
+{ id: 3 ,name: " Nasi Cumi Calamari ", category: "makanan", desc:" Nasi Cumi Calamari ", price: 15000 , rating: 4.3, reviews:316, popular:true, img: " gambar/Cumi%20Calamari%201.png" },
+{ id: 4 ,name: " Nasi Udang Selimut ", category: "makanan", desc:" Nasi Udang Selimut ", price: 15000 , rating: 4.6, reviews:321, popular:true, img: " gambar/Udang%20Selimut.png" },
+{ id: 5 ,name: " Nasi Chicken Katsu Barbeque ", category: "makanan", desc:" Nasi Chicken Katsu Barbeque ", price: 15000 , rating: 4.8, reviews:299, popular:true, img: " gambar/Chicken%20Katsu%20Saus%20Barbeque.png" },
+{ id: 6 ,name: " Nasi Chicken Katsu Lada Hitam ", category: "makanan", desc:" Nasi Chicken Katsu Lada Hitam ", price: 15000 , rating: 4.4, reviews:224, popular:true, img: " gambar/Chicken%20Katsu%20%20Lada%20Hitam.png" },
+{ id: 7 ,name: " Nasi Sayap Spacy ", category: "makanan", desc:" Nasi Sayap Spacy ", price: 15000 , rating: 4.7, reviews:278, popular:false, img: " gambar/Sayap%20Spicy.png" },
+{ id: 8 ,name: " Nasi Telur Dadar ", category: "makanan", desc:" Nasi Telur Dadar ", price: 11000 , rating: 4.2, reviews:198, popular:false, img: " gambar/Telur%20Dadar.png" },
+{ id: 9 ,name: " Nasi Usus ", category: "makanan", desc:" Nasi Usus ", price: 13000 , rating: 4.6, reviews:198, popular:false, img: " gambar/Usus.png" },
+{ id: 10 ,name: " Nasi Putih ", category: "makanan", desc:" Nasi Putih ", price: 5000 , rating: 4.1, reviews:69, popular:false, img: " gambar/Nasi%20Putih.png" },
+{ id: 11 ,name: " Ceker Pedas ", category: "makanan", desc:" Ceker Pedas ", price: 10000 , rating: 4.9, reviews:564, popular:true, img: " gambar/Ceker%20Pedas.png" },
+{ id: 12 ,name: " Ceker Pedas Manis ", category: "makanan", desc:" Ceker Pedas Manis ", price: 10000 , rating: 4.6, reviews:447, popular:false, img: " gambar/Ceker%20Pedas%20Manis.png" },
+{ id: 13 ,name: " Sayap Pedas ", category: "makanan", desc:" Sayap Pedas ", price: 10000 , rating: 4.8, reviews:434, popular:true, img: " gambar/Sayap%20Pedas-1.png" },
+{ id: 14 ,name: " Sayap Pedas Manis ", category: "makanan", desc:" Sayap Pedas Manis ", price: 10000 , rating: 4.5, reviews:372, popular:false, img: " gambar/Sayap%20Pedas%20Manis.png" },
+{ id: 15 ,name: " Pempek ", category:"jajan", desc:" Pempek ", price: 13000 , rating: 4.2, reviews:102, popular:false, img: " gambar/Pempek.png" },
+{ id: 16 ,name: " Kentang Goreng ", category:"jajan", desc:" Kentang Goreng ", price: 10000 , rating: 4.3, reviews:76, popular:false, img: " gambar/Kentang%20Goreng.png" },
+{ id: 17 ,name: " Keju Aroma ", category:"jajan", desc:" Keju Aroma ", price: 15000 , rating: 4.4, reviews:104, popular:false, img: " gambar/keju%20aroma.png" },
+{ id: 18 ,name: " Dimsum ", category:"jajan", desc:" Dimsum ", price: 10000 , rating: 4.7, reviews:207, popular:true, img: " gambar/dimsum.png" },
+{ id: 19 ,name: " Tahu Dimsum ", category:"jajan", desc:" Tahu Dimsum ", price: 12000 , rating: 4.3, reviews:87, popular:true, img: " gambar/Tahu%20dimsum.png" },
+{ id: 20 ,name: " Salad Buah ", category:"jajan", desc:" Salad Buah ", price: 15000 , rating: 4.4, reviews:213, popular:true, img: " gambar/salad%20Buah.png" },
 
-{ id: 22 ,name: " Es Teh Original ", category: "minuman", desc:" Es Teh Original ", price: 4000 , rating: 4.7, reviews:473, popular:true, img: " gambar/Es%20Teh%20Ori.png ." },
-{ id: 23 ,name: " Es Teh Leci ", category: "minuman", desc:" Es Teh Leci ", price: 7000 , rating: 4.6, reviews:234, popular:false, img: " gambar/Es%20Teh%20Leci.png ." },
-{ id: 24 ,name: " Es Teh Melon ", category: "minuman", desc:" Es Teh Melon ", price: 7000 , rating: 4.5, reviews:142, popular:true, img: " gambar/Es%20Teh%20Melon.png ." },
-{ id: 25 ,name: " Es Teh Strawberry ", category: "minuman", desc:" Es Teh Strawberry ", price: 7000 , rating: 4.3, reviews:122, popular:false, img: " gambar/Es%20Teh%20Strawberry.png ." },
-{ id: 26 ,name: " Es Teh Lemon ", category: "minuman", desc:" Es Teh Lemon ", price: 7000 , rating: 4.4, reviews:169, popular:false, img: " gambar/Es%20Teh%20Lemon.png ." },
-{ id: 27 ,name: " Milk Tea ", category: "minuman", desc:" Milk Tea ", price: 8000 , rating: 4.5, reviews:136, popular:false, img: " gambar/Milk%20Tea.png ." },
-{ id: 28 ,name: " Milk Tea Strawberry ", category: "minuman", desc:" Milk Tea Strawberry ", price: 8000 , rating: 4.6, reviews:121, popular:false, img: " gambar/Milk%20Tea%20Strawberry.png ." },
-{ id: 29 ,name: " Milk Tea Melon ", category: "minuman", desc:" Milk Tea Melon ", price: 8000 , rating: 4.8, reviews:118, popular:false, img: " gambar/Milk%20Tea%20Melon.png ." },
+{ id: 22 ,name: " Es Teh Original ", category: "minuman", desc:" Es Teh Original ", price: 4000 , rating: 4.7, reviews:473, popular:true, img: " gambar/Es%20Teh%20Ori.png" },
+{ id: 23 ,name: " Es Teh Leci ", category: "minuman", desc:" Es Teh Leci ", price: 7000 , rating: 4.6, reviews:234, popular:false, img: " gambar/Es%20Teh%20Leci.png" },
+{ id: 24 ,name: " Es Teh Melon ", category: "minuman", desc:" Es Teh Melon ", price: 7000 , rating: 4.5, reviews:142, popular:true, img: " gambar/Es%20Teh%20Melon.png" },
+{ id: 25 ,name: " Es Teh Strawberry ", category: "minuman", desc:" Es Teh Strawberry ", price: 7000 , rating: 4.3, reviews:122, popular:false, img: " gambar/Es%20Teh%20Strawberry.png" },
+{ id: 26 ,name: " Es Teh Lemon ", category: "minuman", desc:" Es Teh Lemon ", price: 7000 , rating: 4.4, reviews:169, popular:false, img: " gambar/Es%20Teh%20Lemon.png" },
+{ id: 27 ,name: " Milk Tea ", category: "minuman", desc:" Milk Tea ", price: 8000 , rating: 4.5, reviews:136, popular:false, img: " gambar/Milk%20Tea.png" },
+{ id: 28 ,name: " Milk Tea Strawberry ", category: "minuman", desc:" Milk Tea Strawberry ", price: 8000 , rating: 4.6, reviews:121, popular:false, img: " gambar/Milk%20Tea%20Strawberry.png" },
+{ id: 29 ,name: " Milk Tea Melon ", category: "minuman", desc:" Milk Tea Melon ", price: 8000 , rating: 4.8, reviews:118, popular:false, img: " gambar/Milk%20Tea%20Melon.png" },
 { id: 30 ,name: " Durian Milk ", category: "minuman", desc:" Durian Milk ", price: 7000 , rating: 4.1, reviews:106, popular:false, img: " gambar/Durian%20Milk.png ." },
-{ id: 31 ,name: " Strawberry Milk ", category: "minuman", desc:" Strawberry Milk ", price: 7000 , rating: 4.2, reviews:167, popular:false, img: " gambar/Strawberry%20Milk.png ." },
-{ id: 32 ,name: " Melon Milk ", category: "minuman", desc:" Melon Milk ", price: 7000 , rating: 4.4, reviews:162, popular:false, img: " gambar/Melon%20Milk.png ." },
-{ id: 33 ,name: " Grape Milk ", category: "minuman", desc:" Grape Milk ", price: 7000 , rating: 4.3, reviews:153, popular:false, img: " gambar/Grape%20Milk.png ." },
-{ id: 34 ,name: " Mango Milk ", category: "minuman", desc:" Mango Milk ", price: 7000 , rating: 4.4, reviews:183, popular:false, img: " gambar/Mango%20Milk.png ." },
-{ id: 35 ,name: " Chocolate Milk ", category: "minuman", desc:" Chocolate Milk ", price: 7000 , rating: 4.6, reviews:216, popular:true, img: " gambar/Chocolate%20Milk.png ." },
-{ id: 36 ,name: " Coffee Latte ", category: "minuman", desc:" Coffee Latte ", price: 12000 , rating: 4.8, reviews:367, popular:true, img: " gambar/Coffee%20Latte.png." },
-{ id: 37 ,name: " Coffee Latte Brown Sugar ", category: "minuman", desc:" Coffee Latte Brown Sugar ", price: 14000 , rating: 4.9, reviews:479, popular:true, img: " gambar/Coffee%20Latte%20brown%20sugar.png ." },
-{ id: 38 ,name: " Kopi Hitam ", category: "minuman", desc:" Kopi Hitam ", price: 8000 , rating: 4.0, reviews:79, popular:false, img: " gambar/Kopi%20Hitam.png ." },
-{ id: 39 ,name: " Sup Buah ", category: "minuman", desc:" Sup Buah ", price: 11000 , rating: 4.7, reviews:188, popular:true, img: " gambar/Sup%20Buah.png ." },
-{ id: 40 ,name: " Cendol Kecebong ", category: "minuman", desc:" Cendol Kecebong ", price: 12000 , rating: 4.4, reviews:86, popular:false, img: " gambar/Cendol%20Kecebong.png ." },
+{ id: 31 ,name: " Strawberry Milk ", category: "minuman", desc:" Strawberry Milk ", price: 7000 , rating: 4.2, reviews:167, popular:false, img: " gambar/Strawberry%20Milk.png" },
+{ id: 32 ,name: " Melon Milk ", category: "minuman", desc:" Melon Milk ", price: 7000 , rating: 4.4, reviews:162, popular:false, img: " gambar/Melon%20Milk.png" },
+{ id: 33 ,name: " Grape Milk ", category: "minuman", desc:" Grape Milk ", price: 7000 , rating: 4.3, reviews:153, popular:false, img: " gambar/Grape%20Milk.png" },
+{ id: 34 ,name: " Mango Milk ", category: "minuman", desc:" Mango Milk ", price: 7000 , rating: 4.4, reviews:183, popular:false, img: " gambar/Mango%20Milk.png" },
+{ id: 35 ,name: " Chocolate Milk ", category: "minuman", desc:" Chocolate Milk ", price: 7000 , rating: 4.6, reviews:216, popular:true, img: " gambar/Chocolate%20Milk.png" },
+{ id: 36 ,name: " Coffee Latte ", category: "minuman", desc:" Coffee Latte ", price: 12000 , rating: 4.8, reviews:367, popular:true, img: " gambar/Coffee%20Latte.png" },
+{ id: 37 ,name: " Coffee Latte Brown Sugar ", category: "minuman", desc:" Coffee Latte Brown Sugar ", price: 14000 , rating: 4.9, reviews:479, popular:true, img: " gambar/Coffee%20Latte%20brown%20sugar.png" },
+{ id: 38 ,name: " Kopi Hitam ", category: "minuman", desc:" Kopi Hitam ", price: 8000 , rating: 4.0, reviews:79, popular:false, img: " gambar/Kopi%20Hitam.png" },
+{ id: 39 ,name: " Sup Buah ", category: "minuman", desc:" Sup Buah ", price: 11000 , rating: 4.7, reviews:188, popular:true, img: " gambar/Sup%20Buah.png" },
+{ id: 40 ,name: " Cendol Kecebong ", category: "minuman", desc:" Cendol Kecebong ", price: 12000 , rating: 4.4, reviews:86, popular:false, img: " gambar/Cendol%20Kecebong.png" },
 ];
 
 let cart = [];
@@ -495,3 +495,29 @@ function openPlatform(platform) {
   // If it fails, web link opens after 1.5s
   window.addEventListener('blur', () => clearTimeout(timeout), { once: true });
 }
+
+
+function checkStoreStatus() {
+  const statusText = document.getElementById("store-status");
+  const date = new Date();
+  const currentHour = date.getHours();
+  
+  // Tentukan jam buka dan tutup (Format 24 jam)
+  const openHour = 9;  // Jam 09:00
+  const closeHour = 21; // Jam 21:00
+
+  // Logika pengecekan jam operasional
+  if (currentHour >= openHour && currentHour < closeHour) {
+    statusText.textContent = " BUKA";
+    statusText.className = "open";
+  } else {
+    statusText.textContent = "TUTUP";
+    statusText.className = "closed";
+  }
+}
+
+// Jalankan fungsi saat halaman dimuat
+checkStoreStatus();
+
+// Periksa status setiap 1 menit (opsional agar otomatis berubah saat jam operasional tiba)
+setInterval(checkStoreStatus, 60000);
