@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Asap Pedas X Teko</title>
+
+ <link rel="icon" type="image/x-icon" href="img/icon-asap-pedas.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+ 
+
+    <!-- css -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="app-wrapper" id="app">
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== HOME ===== -->
+  <div class="screen active" id="screen-home">
+    <div class="status-bar">
+      <span> <div id="watch"></div></span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <iconify-icon icon="mdi:signal-cellular-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:wifi-strength-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:battery-70" style="font-size:0.9rem;"></iconify-icon>
+      </div>
+    </div>
+
+    <div class="app-header">
+	
+	<a href="" onclick="navigateTo('home')"><img src="img/Logo%20Asap%20Pedas%20X%20Teko.png" width="50%" heigh="100%"></a>
+      <!-- <div class="logo-text"><span class="red">ASAP PEDAS</span><span class="gold"> X TEKO</span></div> -->
+      <div class="header-actions">
+        <button class="icon-btn" onclick="showToast('🔔 Tidak ada notifikasi baru')">
+          <iconify-icon icon="mdi:bell-outline" style="font-size:1.15rem;"></iconify-icon>
+        </button>
+        <button class="icon-btn" onclick="switchScreen('cart')">
+          <iconify-icon icon="mdi:cart-outline" style="font-size:1.15rem;"></iconify-icon>
+          <span class="badge" id="home-badge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Location Bar -->
+    <div class="location-bar fade-up" onclick="openAddressSheet()">
+      <iconify-icon icon="mdi:map-marker" class="loc-icon"></iconify-icon>
+      <div class="location-info">
+        <div class="location-label">Masukan Lokasi Anda</div>
+        <div class="location-address" id="homeLocationAddress">Pilih alamat pengiriman →</div>
+      </div>
+      <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero fade-up fade-up-d1">
+      <img src="img/ceker-pedas.png" alt="Hero">
+      <div class="hero-overlay">
+        <div class="hero-badge"><iconify-icon icon="mdi:fire"></iconify-icon> Ceker Pedas</div>
+        <h1 class="hero-title">Pecinta pedas<br> merapat! </h1>
+        <p class="hero-subtitle">Pedasnya siap bikin lidah bergoyang.</p>
+      </div>
+    </div>
+
+    <!-- <div class="search-bar fade-up fade-up-d2">
+      <iconify-icon icon="mdi:magnify"></iconify-icon>
+      <input type="text" placeholder="Cari menu favorit kamu..." id="searchInput" oninput="handleSearch(this.value)">
+      <iconify-icon icon="mdi:tune-variant" style="color:var(--gold);cursor:pointer;" onclick="showToast('🔍 Filter segera hadir!')"></iconify-icon>
+    </div>   -->
+<br/>
+
+    <div class="no-tax-banner fade-up fade-up-d2">
+      <iconify-icon icon="mdi:tag-check-outline"></iconify-icon>
+      <span>Makan Hemat, Rasa Nikmat!</span>
+    </div>
+	
+	<div class="categories" id="catContainer">
+      <button class="cat-pill active" data-cat="all" onclick="switchScreen('menu')"><iconify-icon icon="mdi:food-fork-drink"></iconify-icon> Semua</button>
+      <button class="cat-pill" data-cat="makanan" onclick="switchScreen('menu');setTimeout(()=>filterCategory('makanan'),100)"><iconify-icon icon="mdi:hamburger"></iconify-icon> Makanan</button>
+      <button class="cat-pill" data-cat="minuman" onclick="switchScreen('menu');setTimeout(()=>filterCategory('minuman'),100)"><iconify-icon icon="mdi:cup"></iconify-icon> Minuman</button>
+      <button class="cat-pill" data-cat="jajan"onclick="switchScreen('menu');setTimeout(()=>filterCategory('jajan'),100)"><iconify-icon icon="mdi:cake-variant-outline"></iconify-icon> Jajan</button>
+    </div>
+	
+	
+	
+ 
+
+    <!-- <div class="section-header fade-up fade-up-d3">
+      <h2 class="section-title">🔥 Promo Spesial</h2>
+      <a class="section-link" onclick="switchScreen('menu')">Lihat Semua</a>
+    </div>
+    <div class="h-scroll fade-up fade-up-d3">
+      <div class="promo-card" onclick="switchScreen('menu')">
+        <img src="https://picsum.photos/seed/burgermeal/520/300.jpg" alt="Promo">
+        <div class="overlay">
+          <div class="promo-title">Diskon 30%</div>
+          <div class="promo-desc">Burger Premium Combo • Akhir bulan</div>
+        </div>
+      </div>
+      <div class="promo-card" onclick="switchScreen('menu')">
+        <img src="https://picsum.photos/seed/pastapromo/520/300.jpg" alt="Promo">
+        <div class="overlay" style="background:linear-gradient(135deg,rgba(201,169,110,0.9),rgba(0,0,0,0.65));">
+          <div class="promo-title">Buy 1 Get 1</div>
+          <div class="promo-desc">Semua Pasta & Risotto</div>
+        </div>
+      </div>
+
+
+      <div class="promo-card" onclick="switchScreen('menu')">
+        <img src="https://picsum.photos/seed/dessertgold/520/300.jpg" alt="Promo">
+        <div class="overlay" style="background:linear-gradient(135deg,rgba(230,57,70,0.8),rgba(80,0,0,0.8));">
+          <div class="promo-title">Free Dessert</div>
+          <div class="promo-desc">Min. belanja Rp 150.000</div>
+        </div>
+      </div>
+    </div>
+
+-->
+
+    <div class="section-header">
+      <h2 class="section-title">⭐ Best Seller</h2>
+      <a class="section-link" onclick="switchScreen('menu')">Lihat Semua</a>
+    </div>
+    <div class="menu-grid" id="popular-grid"></div>
+	
+	
+	
+	
+	
+  <!-- Delivery Platforms -->
+    <div class="platforms-section fade-up fade-up-d1">
+      <div class="platforms-label">Pesan via Platform</div>
+      <div class="platforms-row">
+        <!-- GrabFood -->
+        <div class="platform-item" onclick="openPlatform('grab')">
+          <div class="platform-icon grab" id="grabIcon">
+            <img src="img/grabfood-logo.svg" width="90%">
+          </div>
+          <span class="platform-name">GrabFood</span>
+        </div>
+        <!-- Shopee Food -->
+        <div class="platform-item" onclick="openPlatform('shopee')">
+          <div class="platform-icon shopee" id="shopeeIcon">
+           <img src="img/shopee-food-logo.svg" width="90%">
+          </div>
+          <span class="platform-name">Shopee Food</span>
+        </div>
+        <!-- GoFood -->
+        <div class="platform-item" onclick="openPlatform('gojek')">
+          <div class="platform-icon gojek" id="gojekIcon">
+            <img src="img/gofood-logo.svg" width="90%">
+          </div>
+          <span class="platform-name">GoFood</span>
+        </div>
+      </div>
+    </div>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <div class="section-header">
+      <h2 class="section-title">📂 Kategori</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-grid-item" onclick="switchScreen('menu');setTimeout(()=>filterCategory('makanan'),100)">
+        <div class="cat-grid-emoji">🥩</div>
+        <div class="cat-grid-name">Makanan</div>
+        <!--  <div class="cat-grid-count">12 menu</div> -->
+      </div>
+      <div class="cat-grid-item" onclick="switchScreen('menu');setTimeout(()=>filterCategory('minuman'),100)">
+        <div class="cat-grid-emoji">🥤</div>
+        <div class="cat-grid-name">Minuman</div>
+      <!--   <div class="cat-grid-count">8 menu</div> -->
+      </div>
+      <div class="cat-grid-item" onclick="switchScreen('menu');setTimeout(()=>filterCategory('jajan'),100)">
+        <div class="cat-grid-emoji">🍰</div>
+        <div class="cat-grid-name">Jajan</div>
+       <!-- <div class="cat-grid-count">6 menu</div> -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ===== MENU ===== -->
+  <div class="screen" id="screen-menu">
+    <div class="status-bar">
+      <span><div id="watch2"></div></span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <iconify-icon icon="mdi:signal-cellular-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:wifi-strength-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:battery-70" style="font-size:0.9rem;"></iconify-icon>
+      </div>
+    </div>
+    <div class="app-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="icon-btn" onclick="switchScreen('home')" style="width:36px;height:36px;border-radius:10px;">
+          <iconify-icon icon="mdi:arrow-left" style="font-size:1.1rem;"></iconify-icon>
+        </button>
+        <h2 style="font-size:1.05rem;font-weight:700;">Menu</h2>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <div class="view-toggle">
+          <button class="view-btn active" id="viewGrid" onclick="setView('grid')"><iconify-icon icon="mdi:view-grid-outline"></iconify-icon></button>
+          <button class="view-btn" id="viewList" onclick="setView('list')"><iconify-icon icon="mdi:view-list-outline"></iconify-icon></button>
+        </div>
+        <button class="icon-btn" onclick="switchScreen('cart')">
+          <iconify-icon icon="mdi:cart-outline" style="font-size:1.15rem;"></iconify-icon>
+          <span class="badge" id="menu-badge" style="display:none;">0</span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar">
+      <iconify-icon icon="mdi:magnify"></iconify-icon>
+      <input type="text" placeholder="Cari di menu..." id="menuSearchInput" oninput="handleMenuSearch(this.value)">
+    </div>
+    <div class="categories" id="catContainer">
+      <button class="cat-pill active" data-cat="all" onclick="filterCategory('all')"><iconify-icon icon="mdi:food-fork-drink"></iconify-icon> Semua</button>
+      <button class="cat-pill" data-cat="makanan" onclick="filterCategory('makanan')"><iconify-icon icon="mdi:hamburger"></iconify-icon> Makanan</button>
+      <button class="cat-pill" data-cat="minuman" onclick="filterCategory('minuman')"><iconify-icon icon="mdi:cup"></iconify-icon> Minuman</button>
+      <button class="cat-pill" data-cat="jajan" onclick="filterCategory('jajan')"><iconify-icon icon="mdi:cake-variant-outline"></iconify-icon> Jajan</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+    <div class="menu-list" id="menuList" style="display:none;"></div>
+    <div class="menu-empty" id="menuEmpty">
+      <iconify-icon icon="mdi:food-off"></iconify-icon>
+      <p>Menu tidak ditemukan</p>
+    </div>
+  </div>
+
+  <!-- ===== CART ===== -->
+  <div class="screen" id="screen-cart">
+    <div class="status-bar">
+      <span><div id="watch3"></div></span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <iconify-icon icon="mdi:signal-cellular-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:wifi-strength-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:battery-70" style="font-size:0.9rem;"></iconify-icon>
+      </div>
+    </div>
+    <div class="app-header">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button class="icon-btn" onclick="switchScreen('home')" style="width:36px;height:36px;border-radius:10px;">
+          <iconify-icon icon="mdi:arrow-left" style="font-size:1.1rem;"></iconify-icon>
+        </button>
+        <h2 style="font-size:1.05rem;font-weight:700;">Keranjang</h2>
+      </div>
+      <button class="icon-btn" id="clearCartBtn" onclick="clearCart()" style="display:none;">
+        <iconify-icon icon="mdi:trash-can-outline" style="font-size:1.1rem;color:var(--red);"></iconify-icon>
+      </button>
+    </div>
+    <div id="cartContent"></div>
+  </div>
+
+  <!-- ===== PROFILE ===== -->
+  <div class="screen" id="screen-profile">
+    <div class="status-bar">
+      <span>9:41</span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <iconify-icon icon="mdi:signal-cellular-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:wifi-strength-3" style="font-size:0.85rem;"></iconify-icon>
+        <iconify-icon icon="mdi:battery-70" style="font-size:0.9rem;"></iconify-icon>
+      </div>
+    </div>
+    <div class="app-header">
+      <h2 style="font-size:1.05rem;font-weight:700;">Akun Saya</h2>
+      <button class="icon-btn" onclick="showToast('⚙️ Pengaturan segera hadir!')">
+        <iconify-icon icon="mdi:cog-outline" style="font-size:1.15rem;"></iconify-icon>
+      </button>
+    </div>
+    <div class="profile-header">
+      <div class="profile-avatar">RG</div>
+      <div class="profile-name">Guest User</div>
+      <div class="profile-phone">Belum ada nomor telepon</div>
+    </div>
+    <div class="profile-menu">
+      <div class="profile-item" onclick="openAddressSheet()">
+        <iconify-icon icon="mdi:map-marker-outline" class="pi-icon"></iconify-icon>
+        <span>Alamat Pengiriman</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('📋 Riwayat pesanan kosong')">
+        <iconify-icon icon="mdi:receipt-text-outline" class="pi-icon"></iconify-icon>
+        <span>Riwayat Pesanan</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('❤️ Belum ada favorit')">
+        <iconify-icon icon="mdi:heart-outline" class="pi-icon"></iconify-icon>
+        <span>Menu Favorit</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('💳 Pembayaran via WhatsApp')">
+        <iconify-icon icon="mdi:credit-card-outline" class="pi-icon"></iconify-icon>
+        <span>Pembayaran</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('🏷️ Tidak ada voucher')">
+        <iconify-icon icon="mdi:ticket-percent-outline" class="pi-icon"></iconify-icon>
+        <span>Voucher Saya</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('📞 Hubungi kami di WhatsApp')">
+        <iconify-icon icon="mdi:headset" class="pi-icon"></iconify-icon>
+        <span>Bantuan & CS</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+      <div class="profile-item" onclick="showToast('ℹ️ REDGOLD Kitchen v1.0')">
+        <iconify-icon icon="mdi:information-outline" class="pi-icon"></iconify-icon>
+        <span>Tentang Aplikasi</span>
+        <iconify-icon icon="mdi:chevron-right" class="chevron"></iconify-icon>
+      </div>
+    </div>
+    <div style="padding:28px 20px;text-align:center;">
+      <div class="logo-text" style="font-size:1rem;margin-bottom:4px;"><span class="red">RED</span><span class="gold">GOLD</span> Kitchen</div>
+      <p style="font-size:0.68rem;color:var(--text-muted);">Version 1.0.0 • Made with ❤️</p>
+    </div>
+  </div>
+
+  <!-- ===== DETAIL OVERLAY ===== -->
+  <div class="detail-overlay" id="detailOverlay" onclick="closeDetail(event)">
+    <div class="detail-sheet" id="detailSheet" onclick="event.stopPropagation()">
+      <div class="sheet-handle"><div></div></div>
+      <div style="position:relative;">
+        <img class="detail-img" id="detailImg" src="" alt="">
+        <button class="detail-close" onclick="closeDetailDirect()"><iconify-icon icon="mdi:close"></iconify-icon></button>
+      </div>
+      <div class="detail-body">
+        <div class="detail-category" id="detailCat"></div>
+        <h2 class="detail-name" id="detailName"></h2>
+        <div class="detail-rating-row">
+          <div class="detail-stars" id="detailStars"></div>
+          <span class="detail-rating-text" id="detailRatingText"></span>
+        </div>
+        <p class="detail-desc" id="detailDesc"></p>
+        <div class="detail-price-row">
+          <div>
+            <div class="detail-price-label">Harga</div>
+            <div class="detail-price" id="detailPrice"></div>
+          </div>
+          <div class="detail-no-tax">
+            <iconify-icon icon="mdi:check-circle" style="font-size:0.75rem;vertical-align:middle;margin-right:2px;"></iconify-icon>
+            Tanpa Pajak
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px;">
+          <span style="font-size:0.8rem;color:var(--text-secondary);font-weight:500;">Jumlah</span>
+          <div class="qty-control">
+            <button class="qty-btn minus" onclick="changeDetailQty(-1)"><iconify-icon icon="mdi:minus"></iconify-icon></button>
+            <span class="qty-num" id="detailQty">1</span>
+            <button class="qty-btn" onclick="changeDetailQty(1)"><iconify-icon icon="mdi:plus"></iconify-icon></button>
+          </div>
+        </div>
+        <button class="add-to-cart-btn" id="detailAddBtn" onclick="addToCartFromDetail()">
+          <iconify-icon icon="mdi:cart-plus" style="font-size:1.15rem;"></iconify-icon>
+          Tambah ke Keranjang
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADDRESS OVERLAY ===== -->
+  <div class="address-overlay" id="addressOverlay" onclick="closeAddressSheet(event)">
+    <div class="address-sheet" onclick="event.stopPropagation()">
+      <div class="sheet-handle"><div></div></div>
+      <div style="padding:10px 20px 6px;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:2px;">📍 Alamat Pengiriman</h3>
+        <p style="font-size:0.75rem;color:var(--text-muted);">Masukkan atau bagikan lokasi kamu</p>
+      </div>
+
+      <div class="address-input-group">
+        <div class="input-group">
+          <label class="input-label">Nama Penerima</label>
+          <input type="text" class="input-field" id="addrName" placeholder="Contoh: Budi Santoso">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Nomor Telepon</label>
+          <input type="tel" class="input-field" id="addrPhone" placeholder="Contoh: 081234567890">
+        </div>
+        <div class="input-group">
+          <label class="input-label">Alamat Lengkap</label>
+          <textarea class="input-field" id="addrText" placeholder="Jl. Contoh No. 123, RT/RW, Kelurahan, Kecamatan, Kota"></textarea>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Catatan (opsional)</label>
+          <input type="text" class="input-field" id="addrNotes" placeholder="Contoh: Pagar hijau, dekat masjid">
+        </div>
+
+        <button class="share-loc-btn" id="shareLocBtn" onclick="shareLocation()">
+          <iconify-icon icon="mdi:crosshairs-gps"></iconify-icon>
+          <span id="shareLocText">Bagikan Lokasi GPS</span>
+        </button>
+
+        <button class="save-addr-btn" onclick="saveAddress()">
+          <iconify-icon icon="mdi:check" style="font-size:1.15rem;"></iconify-icon>
+          Simpan Alamat
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING CART ===== -->
+  <div class="floating-cart" id="floatingCart" onclick="switchScreen('cart')">
+    <div class="floating-cart-left">
+      <div class="floating-cart-count" id="floatingCount">0</div>
+      <span class="floating-cart-total" id="floatingTotal">Rp 0</span>
+    </div>
+    <div class="floating-cart-right">
+      Lihat Keranjang
+      <iconify-icon icon="mdi:chevron-right"></iconify-icon>
+    </div>
+  </div>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" data-screen="home" onclick="switchScreen('home')">
+      <div class="nav-dot"></div><iconify-icon icon="mdi:home"></iconify-icon><span>Home</span>
+    </button>
+    <button class="nav-item" data-screen="menu" onclick="switchScreen('menu')">
+      <div class="nav-dot"></div><iconify-icon icon="mdi:silverware-fork-knife"></iconify-icon><span>Menu</span>
+    </button>
+    <button class="nav-item" data-screen="cart" onclick="switchScreen('cart')">
+      <div class="nav-dot"></div><iconify-icon icon="mdi:cart"></iconify-icon><span>Cart</span>
+    </button>
+    <button class="nav-item" data-screen="profile" onclick="openAddressSheet()">
+      <div class="nav-dot"></div><iconify-icon icon="mdi:map-marker" class="loc-icon"></iconify-icon><span>Lokasi</span>
+    </button>
+  </nav>
+</div>
+
+
+<!-- Script.JS -->
+ <script src="script.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="jam.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
