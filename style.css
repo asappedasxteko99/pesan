@@ -774,3 +774,28 @@
   @keyframes rippleOut {
     to { transform: scale(2.5); opacity: 0; }
   }
+  
+  .status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#store-status {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  text-align: center;
+}
+
+.open {
+  background-color: #28a745; /* Hijau untuk Buka */
+}
+
+.closed {
+  background-color: #dc3545; /* Merah untuk Tutup */
+}
