@@ -387,7 +387,7 @@ function updateHomeLocation() {
 function orderViaWhatsApp() {
   if(cart.length===0) return;
   const sub = cart.reduce((s,c)=>s+c.price*c.qty,0);
-  let msg = `🛒 *PESANAN BARU - REDGOLD Kitchen*\n`;
+  let msg = `🛒 *PESANAN BARU`;
   msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
   cart.forEach((item,i)=>{
     msg += `${i+1}. *${item.name}*\n`;
@@ -521,3 +521,50 @@ checkStoreStatus();
 
 // Periksa status setiap 1 menit (opsional agar otomatis berubah saat jam operasional tiba)
 setInterval(checkStoreStatus, 60000);
+
+// ===== SOCIAL DATA =====
+const socialLinks=[
+  {id:'ig',name:'Instagram',url:'https://www.instagram.com/asappedasxteko/',deepLink:'https://www.instagram.com/asappedasxteko/',color:'ig',svg:`<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="white" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="black"/></svg>`},
+  {id:'tiktok',name:'TikTok',url:'https://www.tiktok.com/@asappedas_id',deepLink:'https://www.tiktok.com/@asappedas_id',color:'tiktok',svg:`<svg viewBox="0 0 24 24" fill="none"><path d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0015.54 3h-3.09v12.4a2.59 2.59 0 01-2.59 2.5 2.59 2.59 0 01-2.59-2.59 2.59 2.59 0 012.59-2.59c.28 0 .54.04.79.1v-3.17a5.83 5.83 0 00-.79-.05A5.77 5.77 0 003.89 15.2a5.77 5.77 0 005.76-5.76V9.35a7.18 7.18 0 004.2 1.35V7.56a4.28 4.28 0 01-3.01-1.74z" fill="white"/></svg>`},
+  {id:'fb',name:'Facebook',url:'https://www.facebook.com/profile.php?id=61581788085559',deepLink:'https://www.facebook.com/profile.php?id=61581788085559',color:'fb',svg:`<svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" fill="white" stroke="white" stroke-width=".5"/></svg>`},
+
+  {id:'yt',name:'YouTube',url:'https://www.youtube.com/@asappedas',deepLink:'https://www.youtube.com/@asappedas',color:'yt',svg:`<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="4" stroke="white" stroke-width="1.8"/><path d="M10 9l5 3-5 3V9z" fill="white"/></svg>`}
+];
+
+function renderSocialRow(id,showName){
+  const c=document.getElementById(id);if(!c)return;
+  c.innerHTML=socialLinks.map(s=>`<div class="social-item" onclick="openSocial('${s.id}')" data-social="${s.id}"><div class="social-icon ${s.color}">${s.svg}</div>${showName?`<span class="social-name">${s.name}</span>`:''}</div>`).join('');
+}
+function openSocial(id){
+  const s=socialLinks.find(x=>x.id===id);if(!s)return;
+  document.querySelectorAll(`[data-social="${id}"] .social-icon`).forEach(el=>{const r=document.createElement('div');r.className='social-ripple';el.appendChild(r);setTimeout(()=>r.remove(),500)});
+  showToast(`🔗 Membuka ${s.name}...`);
+  const t=setTimeout(()=>window.open(s.url,'_blank'),1500);
+  try{window.location.href=s.deepLink}catch(e){}window.addEventListener('blur',()=>clearTimeout(t),{once:true});
+}
+
+// ===== FLASH SALE CONFIG =====
+const flashSale = {
+  active: true,
+  endTime: Date.now() + 4*60*60*1000 + 23*60*1000 + 47*1000,
+  items: { 2:25, 4:20, 8:30, 12:15, 15:35 } // itemId: discountPercent
+};
+
+function isFlashActive() { return flashSale.active && Date.now() < flashSale.endTime; }
+function getFlashDiscount(itemId) { return isFlashActive() ? (flashSale.items[itemId] || 0) : 0; }
+function getFlashPrice(item) { const d = getFlashDiscount(item.id); return d > 0 ? Math.round(item.price * (100 - d) / 100) : item.price; }
+function isFlashItem(itemId) { return getFlashDiscount(itemId) > 0; }
+
+// Flash sale timer
+function updateFlashTimer() {
+  if (!isFlashActive()) { document.getElementById('flashBanner').style.display='none'; return; }
+  const diff = Math.max(0, flashSale.endTime - Date.now());
+  const h = Math.floor(diff/3600000), m = Math.floor((diff%3600000)/60000), s = Math.floor((diff%60000)/1000);
+  document.getElementById('flashH').textContent = String(h).padStart(2,'0');
+  document.getElementById('flashM').textContent = String(m).padStart(2,'0');
+  document.getElementById('flashS').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateFlashTimer, 1000);
+
+
+
