@@ -28,7 +28,7 @@ const menuData = [
 { id: 27 ,name: " Milk Tea ", category: "minuman", desc:" Milk Tea ", price: 8000 , rating: 4.5, reviews:136, popular:false, img: " gambar/Milk%20Tea.png" },
 { id: 28 ,name: " Milk Tea Strawberry ", category: "minuman", desc:" Milk Tea Strawberry ", price: 8000 , rating: 4.6, reviews:121, popular:false, img: " gambar/Milk%20Tea%20Strawberry.png" },
 { id: 29 ,name: " Milk Tea Melon ", category: "minuman", desc:" Milk Tea Melon ", price: 8000 , rating: 4.8, reviews:118, popular:false, img: " gambar/Milk%20Tea%20Melon.png" },
-{ id: 30 ,name: " Durian Milk ", category: "minuman", desc:" Durian Milk ", price: 7000 , rating: 4.1, reviews:106, popular:false, img: " gambar/Durian%20Milk.png ." },
+{ id: 30 ,name: " Durian Milk ", category: "minuman", desc:" Durian Milk ", price: 7000 , rating: 4.1, reviews:106, popular:false, img: " gambar/Durian%20Milk.png" },
 { id: 31 ,name: " Strawberry Milk ", category: "minuman", desc:" Strawberry Milk ", price: 7000 , rating: 4.2, reviews:167, popular:false, img: " gambar/Strawberry%20Milk.png" },
 { id: 32 ,name: " Melon Milk ", category: "minuman", desc:" Melon Milk ", price: 7000 , rating: 4.4, reviews:162, popular:false, img: " gambar/Melon%20Milk.png" },
 { id: 33 ,name: " Grape Milk ", category: "minuman", desc:" Grape Milk ", price: 7000 , rating: 4.3, reviews:153, popular:false, img: " gambar/Grape%20Milk.png" },
