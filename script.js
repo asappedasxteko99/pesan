@@ -8,7 +8,7 @@ const menuData = [
 { id: 7 ,name: " Nasi Sayap Spacy ", category: "makanan", desc:" Nasi Sayap Spacy ", price: 15000 , rating: 4.7, reviews:278, popular:false, img: " gambar/Sayap%20Spicy.png" },
 { id: 8 ,name: " Nasi Telur Dadar ", category: "makanan", desc:" Nasi Telur Dadar ", price: 11000 , rating: 4.2, reviews:198, popular:false, img: " gambar/Telur%20Dadar.png" },
 { id: 9 ,name: " Nasi Usus ", category: "makanan", desc:" Nasi Usus ", price: 13000 , rating: 4.6, reviews:198, popular:false, img: " gambar/Usus.png" },
-{ id: 10 ,name: " Nasi Putih ", category: "makanan", desc:" Nasi Putih ", price: 5000 , rating: 4.1, reviews:69, popular:false, img: " gambar/Nasi%20Putih.png" },
+{ id: 10 ,name: " Nasi Putih ", category: "makanan", desc:" Nasi Putih ", price: 5000 , rating: 4.1, reviews:69, popular:false, img: " gambar/nasi%20putih.png" },
 { id: 11 ,name: " Ceker Pedas ", category: "makanan", desc:" Ceker Pedas ", price: 10000 , rating: 4.9, reviews:564, popular:true, img: " gambar/Ceker%20Pedas.png" },
 { id: 12 ,name: " Ceker Pedas Manis ", category: "makanan", desc:" Ceker Pedas Manis ", price: 10000 , rating: 4.6, reviews:447, popular:false, img: " gambar/Ceker%20Pedas%20Manis.png" },
 { id: 13 ,name: " Sayap Pedas ", category: "makanan", desc:" Sayap Pedas ", price: 10000 , rating: 4.8, reviews:434, popular:true, img: " gambar/Sayap%20Pedas-1.png" },
